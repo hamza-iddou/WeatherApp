@@ -6,7 +6,7 @@ const SearchBar = () => {
     <Form>
         <Form.Group className={`${styles.searchContainer}`}>
             <Form.Label></Form.Label>
-            <Form.Control type="text" size={"lg"} placeholder="Enter Your City ..."></Form.Control>
+            <Form.Control className={`${styles.searchInput}`} type="text" size={"lg"} placeholder="Enter Your City ..."></Form.Control>
             <Button variant="primary" size={"sm"}>Search</Button>
         </Form.Group>
         
