@@ -38,7 +38,7 @@ const Weather = () => {
             <div>
               <div>SUNRISE</div>
               <img src={sun} width={'20px'} height={'20px'} alt="sun" />
-              <div>08:00 AM</div>
+              <div>08:00</div>
             </div>
 
             <div>
