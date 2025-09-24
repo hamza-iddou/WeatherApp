@@ -7,17 +7,21 @@ import WallPaper from './components/Wallpaper/WallPaper'
 import Weather from './components/Weather/Weather'
 import {Container} from "react-bootstrap"
 import './App.module.scss'
-
+import  {store} from "./app/store"
+import { Provider } from "react-redux" 
 function App() {
 
 
   return (
     <>
-          <WallPaper/>
+      <Provider store={store}>
+        <WallPaper/>
           <Container>
           <SearchBar/>
           <Weather/>
           </Container>
+      </Provider>
+          
           </>
   )
 }

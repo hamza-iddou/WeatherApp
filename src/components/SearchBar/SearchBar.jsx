@@ -2,10 +2,13 @@ import { Button, Form } from "react-bootstrap"
 import styles from "./SearchBar.module.scss"
 import { Autocomplete, TextField } from "@mui/material"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { setData } from "../../features/weather/WeatherSlice"
 
 const SearchBar = () => {
     const [cities, setCities] = useState([])
     const [selectedCity, setSelectedCity] = useState(null)
+    const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
         const { value } = e.currentTarget
@@ -41,7 +44,8 @@ const SearchBar = () => {
             fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${value.city}&appid=a44cfbe0a53f4f9d07d1c047935977f0`)
                 .then(response => response.json())
                 .then(weatherData => {
-                    console.log('Weather data:', weatherData)
+                    const {clouds, main, name, sys, weather, wind} = weatherData
+                    dispatch(setData({clouds, main, name, sys, weather, wind}))
                     
                 })
                 .catch(error => {
