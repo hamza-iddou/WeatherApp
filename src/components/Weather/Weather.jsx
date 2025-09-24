@@ -12,10 +12,14 @@ import sunnyAndRain from "../../assets/img/weather/sunny-and-rain.png"
 import umbrella from "../../assets/img/weather/umbrella.png"
 import wind from "../../assets/img/weather/wind.png"
 import clock from "../../assets/img/weather/clock.png"
+import { useSelector } from 'react-redux'
 
 const Weather = () => {
+  const weather = useSelector(({weather}) => weather)
   return (
+
     <Card className={styles.container}>
+      {JSON.stringify(weather)}
       <Card.Body>
         <Card.Title>
           <img src={location} width={'40px'} height={'40px'} alt="location" /> Casablanca, MA

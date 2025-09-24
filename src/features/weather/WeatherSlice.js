@@ -14,7 +14,14 @@ export const WeatherSlice = createSlice({
     initialState,
     reducers:{
         setData : (state, action) =>{
-            state =  action.payload
+            const {clouds, main, name, sys, weather, wind} = action.payload
+            state.clouds =  clouds
+            state.main =  main
+            state.name =  name
+            state.sys =  sys
+            state.weather =  weather
+            state.wind =  wind
+
         }
     }
 })
